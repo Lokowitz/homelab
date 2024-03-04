@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+  igotify-notification:
+    container_name: igotify
+    image: ghcr.io/androidseb25/igotify-notification-assist:${VERSION}
+    restart: unless-stopped
+    ports:
+      - ${WEB_PORT}:8080
+    environment:
+      - IGOTIFY_CLIENT_TOKEN=${GOTIFY_TOKEN}
+      - GOTIFY_SERVER_URL=${GOTIFY_URL}
+    volumes:
+      - ./data/data:/app/data
+networks: {}
