@@ -5,11 +5,11 @@ services:
     image: adguard/adguardhome:latest
     restart: unless-stopped
     ports:
+      - ${WEB_PORT}:80/tcp
       - 53:53/tcp
       - 53:53/udp
       - 784:784/udp
       - 853:853/tcp
-      - 8081:80/tcp
       - 3000:3000/tcp
     volumes:
       - ./data/workdir:/opt/adguardhome/work
