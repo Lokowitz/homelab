@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+  file-browser:
+    container_name: file-browser
+    image: filebrowser/filebrowser:latest
+    restart: unless-stopped
+    ports:
+      - ${WEB_PORT}:80
+    user: 0:0
+    security_opt:
+      - no-new-privileges:true
+    volumes:
+      - /:/srv
+      - ./data/database.db:/database.db
