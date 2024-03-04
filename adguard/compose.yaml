@@ -2,7 +2,7 @@ version: "3.8"
 services:
   adguardhome:
     container_name: adguardhome
-    image: adguard/adguardhome:latest
+    image: adguard/adguardhome:${VERSION}
     restart: unless-stopped
     ports:
       - ${WEB_PORT}:80/tcp
