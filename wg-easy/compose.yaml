@@ -16,6 +16,6 @@ services:
     environment:
       - WG_PORT=${WG_PORT}
       - WG_HOST=${WG_HOST}
-      - PASSWORD=${PASSWORD}
+      - PASSWORD=${WG_PASSWORD}
     volumes:
       - ./data/data:/etc/wireguard
