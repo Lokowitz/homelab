@@ -1,0 +1,12 @@
+version: "3.3"
+services:
+  gotify:
+    container_name: gotify
+    image: gotify/server:${VERSION}
+    restart: unless-stopped
+    ports:
+      - ${WEB_PORT}:80
+    environment:
+      - TZ=${TZ}
+    volumes:
+      - ./data/data:/app/data
