@@ -1,0 +1,15 @@
+version: "3"
+services:
+  watchtower:
+    container_name: watchtower
+    image: containrrr/watchtower:${VERSION}
+    restart: unless-stopped
+    command: 
+      --cleanup 
+      --interval ${INTERVAL}
+      --notification-gotify-token=${GOTIFY_TOKEN}
+      --notification-gotify-url=${GOTIFY_URL}
+      --notifications=gotify
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /etc/localtime:/etc/localtime:ro
