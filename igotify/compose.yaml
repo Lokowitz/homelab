@@ -11,4 +11,3 @@ services:
       - GOTIFY_SERVER_URL=${GOTIFY_URL}
     volumes:
       - ./data/data:/app/data
-networks: {}
