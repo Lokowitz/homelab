@@ -1,8 +1,7 @@
-version: "3.8"
 services:
   file-browser:
     container_name: file-browser
-    image: filebrowser/filebrowser:latest
+    image: filebrowser/filebrowser:${VERSION}
     restart: unless-stopped
     ports:
       - ${WEB_PORT}:80
@@ -10,5 +9,7 @@ services:
     security_opt:
       - no-new-privileges:true
     volumes:
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
       - /:/srv
       - ./data/database.db:/database.db
