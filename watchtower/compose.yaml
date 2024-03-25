@@ -1,4 +1,3 @@
-version: "3"
 services:
   watchtower:
     container_name: watchtower
@@ -11,5 +10,6 @@ services:
       --notification-gotify-url=${GOTIFY_URL}
       --notifications=gotify
     volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
+      - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
+      - /var/run/docker.sock:/var/run/docker.sock
