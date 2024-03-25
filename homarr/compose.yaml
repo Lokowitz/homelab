@@ -1,4 +1,3 @@
-version: "3"
 services:
   homarr:
     container_name: homarr
@@ -7,6 +6,8 @@ services:
     ports:
       - ${WEB_PORT}:7575
     volumes:
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
       - /var/run/docker.sock:/var/run/docker.sock
       - ./data/configs:/app/data/configs
       - ./data/icons:/app/public/icons
