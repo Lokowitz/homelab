@@ -1,12 +1,19 @@
-version: "3.5"
 services:
   jellyfin:
-    image: jellyfin/jellyfin:${VERSION}
     container_name: jellyfin
-    user: 0:0
-    network_mode: host
-    volumes:
-      - ./data/config:/config
-      - ./data/cache:/cache
-      - ${MEDIA}:/media
+    image: lscr.io/linuxserver/jellyfin:${VERSION}
     restart: unless-stopped
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - JELLYFIN_PublishedServerUrl=192.168.10.13
+    volumes:
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+      - ./data/config:/config
+      - ${MEDIA_SERIES}:/data/tvshows
+      - ${MEDIA_MOVIE}:/data/movies
+    ports:
+      - 8096:8096
+      - 7359:7359/udp
+      - 1900:1900/udp
