@@ -6,7 +6,7 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-      - JELLYFIN_PublishedServerUrl=192.168.10.13
+      - JELLYFIN_PublishedServerUrl=${URL}
     volumes:
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
