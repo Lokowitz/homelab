@@ -1,11 +1,11 @@
 services:
   db:
     container_name: wikijs-postgress
-    image: postgres:${VERSION-DB}
+    image: postgres:${VERSION_DB}
     restart: unless-stopped
     environment:
       POSTGRES_DB: wiki
-      POSTGRES_PASSWORD: ${PASSWORD-DB}
+      POSTGRES_PASSWORD: ${PASSWORD_DB}
       POSTGRES_USER: wikijs
     logging:
       driver: "none"
@@ -24,7 +24,7 @@ services:
       DB_HOST: db
       DB_PORT: 5432
       DB_USER: wikijs
-      DB_PASS: ${PASSWORD-DB}
+      DB_PASS: ${PASSWORD_DB}
       DB_NAME: wiki
     ports:
       - ${WEB_PORT}:3000
