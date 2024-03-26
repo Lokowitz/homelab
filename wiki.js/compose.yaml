@@ -28,3 +28,6 @@ services:
       DB_NAME: wiki
     ports:
       - ${WEB_PORT}:3000
+    volumes:
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
