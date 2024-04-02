@@ -1,0 +1,12 @@
+services:
+  cups:
+    container_name: cups
+    image: chuckcharlie/cups-avahi-airprint:${VERSION}
+    restart: unless-stopped
+    network_mode: host
+    environment:
+      CUPSADMIN: ${USERNAME}
+      CUPSPASSWORD: ${PASSWORD}
+    volumes:
+      - ./data/service:/services
+      - ./data/config:/config
