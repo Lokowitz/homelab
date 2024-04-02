@@ -1,0 +1,12 @@
+services:
+  node-red:
+    container_name: node-red
+    image: nodered/node-red:${VERSION}
+    restart: unless-stopped
+    ports:
+      - ${WEB_PORT}:1880
+    user: 0:0
+    volumes:
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+      - ./data/data:/data
