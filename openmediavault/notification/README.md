@@ -1,6 +1,6 @@
-Notification script for Openmediavault to Gotify
+Notification script for Openmediavault to Gotify.
 
-just place the "gotify" file in /usr/share/openmediavault/notification/sink.d on your OMV system and activate notifications via smtp.
+Just place the "gotify" file in /usr/share/openmediavault/notification/sink.d on your OMV system and activate notifications via smtp.
 
 Based on this documentations:
 https://gotify.net/docs/pushmsg
