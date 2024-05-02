@@ -1,7 +1,7 @@
 Notification script for Openmediavault to Gotify.
 
 1. Place the "gotify" file in /usr/share/openmediavault/notification/sink.d on your OMV system.
-2. Repleace "<URL>" and "<TOKEN>" in the script
+2. Repleace "URL" and "TOKEN" in the script
 3. Make file executable (chmod +x gotify)
 4. Activate notifications via smtp.
 
