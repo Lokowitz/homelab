@@ -1,0 +1,11 @@
+services:
+  diun:
+    container_name: duin
+    image: crazymax/diun:${VERSION}
+    restart: unless-stopped
+    command: serve
+    volumes:
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+      - ./data/data:/data
+      - ./data/diun.yml:/diun.yml:ro
