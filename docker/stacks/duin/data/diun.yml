@@ -1,0 +1,26 @@
+db:
+  path: diun.db
+
+watch:
+  workers: 20
+  schedule: "0 */6 * * *"
+
+notif:
+  gotify:
+    endpoint: <https://gotify.URL.com>
+    token: <TOKEN>
+    priority: 1
+    timeout: 10s
+    templateTitle: "{{ .Entry.Image }} released"
+    templateBody: |
+      Docker tag {{ .Entry.Image }} which you subscribed to through {{ .Entry.Provider }} provider has been released.
+
+regopts:
+  - name: "docker.io"
+    selector: image
+  - name: "ghcr.io"
+    selector: image
+
+providers:
+  file:
+    filename: /data/config.yml
