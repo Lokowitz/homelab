@@ -1,0 +1,20 @@
+services:
+  samba:
+    build: .
+    image: ghcr.io/servercontainers/samba:${VERSION}
+    restart: unless-stopped
+    network_mode: host
+    environment:
+      SAMBA_CONF_LOG_LEVEL: 3
+      ACCOUNT_<name>: <password>
+      UID_<name>: 1000
+      GROUPS_<name>: omv
+      SAMBA_VOLUME_CONFIG_data: |
+        [Data]
+         path = /shares/data
+         guest ok = no
+         browseable = yes
+         valid users = <name>
+         read only = no
+    volumes:
+      - /mnt/data:/shares/data
