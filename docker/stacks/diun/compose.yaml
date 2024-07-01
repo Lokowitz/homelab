@@ -1,6 +1,6 @@
 services:
   diun:
-    container_name: duin
+    container_name: diun
     image: crazymax/diun:${VERSION}
     restart: unless-stopped
     command: serve
