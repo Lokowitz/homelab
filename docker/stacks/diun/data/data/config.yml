@@ -19,3 +19,10 @@
 - name: nodered/node-red
 - name: vaultwarden/server
 - name: zadam/trilium
+- name: fosrl/newt
+- name: fosrl/pangolin
+- name: fosrl/gerbil
+- name: ghcr.io/paperless-ngx/paperless-ngx
+- name: redis
+- name: postgres
+- name: crazymax/diun
